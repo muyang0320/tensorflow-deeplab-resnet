@@ -97,7 +97,7 @@ def main():
     msk = decode_labels(preds, num_classes=args.num_classes)
     im = Image.fromarray(msk[0])
     end_time = time.time()
-    print('prediction use time: %d ms' % (end_time - start_time))
+    print('prediction use time: %d ms' % ((end_time - start_time) * 1000))
 
     if not os.path.exists(args.save_dir):
         os.makedirs(args.save_dir)
